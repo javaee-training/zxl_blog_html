@@ -1,20 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap-grid.css" rel="stylesheet">
-<script src="https://cdn.bootcss.com/jquery/3.2.1/core.js"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="renderer" content="webkit">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<style type="text/css">
+.col-center-block {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
 <title>登录</title>
 </head>
 <body>
+<!-- 用javascript验证用户名密码是否正确，并跳转到登录后的index.html界面
+     但用这种方法验证并不合理
+<script type="text/javascript">
+    function checkPassword() {
+    	var username = document.getElementById("username");
+		var password = document.getElementById("inpurPassword");
+		if (username == "张三" && password == "123456") {
+			
+		}
+	}
+</script>
+-->
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="../index.html">张三的博客</a>
+        </div>
+        <div class="nav navbar-nav navbar-right">
+            <a class="navbar-brand" href="./register.html">注册</a>
+            <a class="navbar-brand" href="./login.html">登录</a>
+        </div>
+    </div>
+</nav>
 <div class="container">
-    <div class="row">
-        <div class="col nav">
-            <ul class="nav navbar-inverse navbar-static-top">
-                <li><a href="//index.html">张三的博客</a></li>
-                <li><a href="/user/register.html">注册</a></li>
-                <li><a href="/user/login.html">登录</a></li>
-            </ul>
+    <div class="row myCenter">
+        <div class="col-xs-6 col-md-4 col-center-block">
+            <form action="" class="form-signin col-center-block">
+                <h2 class="form-signin-heading text-center">登录</h2>
+                <label for="username">用户名</label>
+                <input type="text" id="username" class="form-control" placeholder="请输入用户名" required="required">
+                <br><label for="inputPassword">密码</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="请输入密码" required="required">
+                <br><button type="submit" class="btn btn-primary btn-block" onclick="checkPassword()">登录</button>
+            </form>
         </div>
     </div>
 </div>
