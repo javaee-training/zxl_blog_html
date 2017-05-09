@@ -4,51 +4,53 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 <meta name="renderer" content="webkit">
-<link rel="stylesheet" href="../css/bootstrap.min.css">
-<style type="text/css">
-.col-center-block {
-    float: none;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-</style>
+<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <title>登录</title>
 </head>
 <body>
-<!-- 用javascript验证用户名密码是否正确，并跳转到登录后的index.html界面
-     但用这种方法验证并不合理
 <script type="text/javascript">
-    function checkPassword() {
-    	var username = document.getElementById("username");
-		var password = document.getElementById("inpurPassword");
-		if (username == "张三" && password == "123456") {
-			
+    function check() {
+    	var string username = document.getElementById("username");
+		var password = document.getElementById("inpurpassword");
+		if (username.length == 0) {
+			document.getElementById("usernameempty").innerHTML="<div class=\"alert alert-danger alert-dismossible\" role=\"alert\" style=\"max-length: 400px\"> <strong>警告</strong>用户名不能为空"
+			}";
 		}
 	}
 </script>
--->
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="../index.html">张三的博客</a>
-        </div>
-        <div class="nav navbar-nav navbar-right">
-            <a class="navbar-brand" href="./register.html">注册</a>
-            <a class="navbar-brand" href="./login.html">登录</a>
-        </div>
-    </div>
-</nav>
 <div class="container">
-    <div class="row myCenter">
-        <div class="col-xs-6 col-md-4 col-center-block">
-            <form action="" class="form-signin col-center-block">
-                <h2 class="form-signin-heading text-center">登录</h2>
-                <label for="username">用户名</label>
-                <input type="text" id="username" class="form-control" placeholder="请输入用户名" required="required">
-                <br><label for="inputPassword">密码</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="请输入密码" required="required">
-                <br><button type="submit" class="btn btn-primary btn-block" onclick="checkPassword()">登录</button>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="../index.html">张三的博客</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="./register.html">注册</a></li>
+                <li><a href="./login.html">登录</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row center-block" style="max-width: 400px;">
+        <div id="usernameempty"></div>
+        <div class="center-block" style="max-width: 400px;">
+            <form action="" class="form-signin">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h2 class="form-signin-heading text-center">登录</h2>
+                        <div class="form-group">
+                            <label for="usernameInput">用户名</label>
+                            <input type="text" id="username" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordInput">密码</label>
+                            <input type="password" id="inputpassword" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block" onclick="check()">登录</button>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
