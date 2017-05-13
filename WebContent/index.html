@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 <meta name="renderer" content="webkit">
+<!-- 添加外部链接 -->
 <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
@@ -11,8 +12,78 @@
 <title>首页</title>
 </head>
 <body>
-<h1>测试</h1>
-<div class="container">
+<div class="container-fluid">
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">张三的博客</a>
+            </div>
+            <!-- 布局在导航栏右侧 -->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="./register.html">注册</a></li>
+                <li><a href="./login.html">登录</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row-fluid">
+        <!-- 分成两列 -->
+        <div class="col-xs-8">
+            <!-- 左侧内容 文章 -->
+            <div class="panel panel-default">
+                <div class="panel-heading">文章</div>
+                <div class="panel-body">
+                    <article>
+                        <h2><a href="./blog/view.html">望岳</a></h2>
+                        <label class="fa fa-tags">诗词歌赋</label>
+                        <ul style="{list-style: none;}">
+                            <li style="list-style: none;">岱宗夫如何，齐鲁青未了。</li>
+                            <li style="list-style: none;">造化钟神秀，阴阳割昏晓。</li>
+                            <li style="list-style: none;">荡胸生层云，决眦入归鸟。</li>
+                            <li style="list-style: none;">会当凌绝顶，一览众山小。</li>
+                        </ul>
+                        <!-- 时间格式有待更改 -->
+                        <label>杜甫 2017年1月1日 10:00</label>
+                        <a href="./blog/view.html">查看更多</a>
+                        <a href="./blog/edit.html">编辑</a>
+                    </article>
+                    <hr style="margin-top: 1px;">
+                    <article>
+                        <h2><a href="./blog/view.html">鹿柴</a></h2>
+                        <label class="fa fa-tags">诗词歌赋</label>
+                        <ul style="{list-style: none;}">
+                            <li style="list-style: none;">空山不见人，但闻人语声。</li>
+                            <li style="list-style: none;">返影入深林，复照青苔上。</li>
+                        </ul>
+                        <!-- 时间格式有待更改 -->
+                        <label>王维 2017年1月1日 10:00</label>
+                        <a href="./blog/view.html">查看更多</a>
+                        <a href="./blog/edit.html">编辑</a>
+                    </article>
+                    <hr style="margin-top: 1px;">
+                    <article>
+                        <div style="text-align: center;">没有文章</div>
+                    </article>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button type="button" class="btn btn-primary btn-circle">上一页</button>
+                <button type="button" class="btn btn-primary btn-circle">下一页</button>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <!-- 右侧内容 标签 -->
+            <div class="panel panel-default">
+                <div class="panel-heading">标签</div>
+                <div class="panel-body">
+                    <a href="" class="fa fa-tags">诗词歌赋</a>
+                    <hr style="margin-top: 1px;">
+                    <a href="" class="fa fa-tags">技术笔记</a>
+                    <hr style="margin-top: 1px;">没有定义标签
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

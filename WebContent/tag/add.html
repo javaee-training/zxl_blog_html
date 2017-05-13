@@ -11,6 +11,40 @@
 <title>添加标签</title>
 </head>
 <body>
-
+<div class="container-fluid">
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">张三的博客</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="./blog/view.html" class="fa fa-plus">文章</a></li>
+                <li><a href="./tag/add.html" class="fa fa-plus">标签</a></li>
+                <li><a href="" class="fa fa-user-o">张三</a></li>
+                <li><a href="" class="fa fa-sign-out">退出</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row-fluid">
+        <div class="center-block">
+            <!-- 表单 -->
+            <form action="" class="form-signin">
+                <div class="panel panel-default">
+                    <div class="panel-heading">录入标签</div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="tags">标签</label>
+                            <input type="text" id="tags" class="form-control">
+                        </div>
+                        <div class="form-group" style="float: right;">
+                            <button type="button" class="btn btn-default">保存</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

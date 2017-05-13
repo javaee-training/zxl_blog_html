@@ -11,16 +11,18 @@
 <body>
 <script type="text/javascript">
     function check() {
-    	var string username = document.getElementById("username");
-		var password = document.getElementById("inpurpassword");
-		if (username.length == 0) {
-			//可能转义字符使用不正确
-			document.getElementById("usernameempty").innerHTML="<div class=\"alert alert-danger alert-dismossible\" role=\"alert\" style=\"max-length: 400px\"> <strong>警告</strong>用户名不能为空"
-			}";
+    	var username = document.getElementById("username").value;
+		var password = document.getElementById("inputpassword").value;
+		var isEmpty = document.getElementById("isEmpty");
+		if (username.trim().length < 6) {
+			isEmpty.style.visibility="visible";
+			};
 		}
-	}
+    	if (password.trim().length == null) {
+			isEmpty.style.visibility="visible";
+		}
 </script>
-<div class="container">
+<div class="container-fluid">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -32,15 +34,15 @@
             </ul>
         </div>
     </nav>
-    <div class="row center-block" style="max-width: 400px;">
-        <div class="alert alert-danger" role="alert">
-            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>用户名不能为空
+    <div class="row-fluid center-block" style="max-width: 400px;">
+        <div id="isEmpty" class="alert alert-danger" role="alert" style="visibility: hidden;">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true">用户名不能为空</i>
         </div>
         <div class="center-block">
             <form action="" class="form-signin">
                 <div class="panel panel-default">
+                    <div class="panel-heading">登录</div>
                     <div class="panel-body">
-                        <h2 class="form-signin-heading">登录</h2>
                         <div class="form-group">
                             <label for="usernameInput">用户名</label>
                             <input type="text" id="username" class="form-control">
